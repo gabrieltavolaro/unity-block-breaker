@@ -6,6 +6,7 @@ public class Block : MonoBehaviour
 {
 
     [SerializeField] AudioClip breakSound;
+    [SerializeField] GameObject blockSparksVFX;
 
     // Cached reference
     Level level;
@@ -20,6 +21,7 @@ public class Block : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        TriggerSparksVFX();
         DestroyBlock();
     }
 
@@ -30,5 +32,11 @@ public class Block : MonoBehaviour
         level.BlockDestroy();
         gameSession.AddToScore();
         
+    }
+
+    private void TriggerSparksVFX()
+    {
+        GameObject sparks = Instantiate(blockSparksVFX, transform.position, transform.rotation);
+        Destroy(sparks, 1f);
     }
 }
