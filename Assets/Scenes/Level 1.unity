@@ -1460,6 +1460,16 @@ PrefabInstance:
       propertyPath: AutoPlay
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4187878820816854697, guid: 51a1c115578944e389084f421b2bb02e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187878820816854697, guid: 51a1c115578944e389084f421b2bb02e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 455
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51a1c115578944e389084f421b2bb02e, type: 3}
 --- !u!1001 &4416796080080887924
