@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-
+    // Configuration Parameters
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockSparksVFX;
+    [SerializeField] int maxHits = 3;
 
     // Cached reference
     Level level;
     GameSession gameSession;
+
+    // State Variables
+    [SerializeField] int timesHit; // Serialized for debugging
 
     private void Start()
     {
@@ -31,10 +35,18 @@ public class Block : MonoBehaviour
     {
         if (tag == "Breakable")
         {
+            HandleHit();
+        }
+    }
+
+    private void HandleHit()
+    {
+        timesHit++;
+        if (timesHit >= maxHits)
+        {
             TriggerSparksVFX();
             DestroyBlock();
         }
-        
     }
 
     private void DestroyBlock()
